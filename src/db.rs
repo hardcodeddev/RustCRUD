@@ -14,7 +14,7 @@ pub async fn init_db() -> Database {
     client_options.app_name = Some("RustMongoAPI".to_string());
 
     let client = Client::with_options(client_options).expect("Failed to initialize client");
-    client.database(&db_name);
+    client.database(&db_name)
 }
 
 pub fn todos_collection(db: &Database) -> Collection<Todo> {

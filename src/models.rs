@@ -1,5 +1,6 @@
+use mongodb::bson::DateTime;
 use serde::{Deserialize, Serialize};
-use uiid::Uuid;
+use uuid::Uuid;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Todo {
@@ -15,4 +16,5 @@ pub struct Todo {
 pub struct NewTodo {
     pub title: String,
     pub description: String,
+    pub due_date: DateTime,
 }

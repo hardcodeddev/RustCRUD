@@ -3,7 +3,7 @@ name = "rust_mongo_api"
 version = "0.1.0"
 edition = "2021"
 
-[dependences]
+[dependencies]
 axum = "0.8.1"
 tokio = { version = "1", features = ["full"] }
 mongodb = "2.5"
@@ -13,3 +13,4 @@ dotenvy = "0.15"
 thiserror = "1.0"
 tracing-subscriber = "0.3"
 uuid = { version = "1.2", features = ["v4"] }
+
