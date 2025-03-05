@@ -1,9 +1,18 @@
 use serde::{Deserialize, Serialize};
+use uiid::Uuid;
 
-#[derive(Debug, Serialize, Deserialize, Queryable, Insertable)]
-#[table_name = "todos"]
-struct Todo {
-    id: i32,
-    title: String,
-    content: String
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct Todo {
+    #[serde(rename = "_id", skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+    pub title: String,
+    pub description: String,
+    pub due_date: DateTime,
+    pub completed: bool,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct NewTodo {
+    pub title: String,
+    pub description: String,
 }
